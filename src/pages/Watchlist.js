@@ -19,7 +19,6 @@ const Watchlist = ({ watchlist, setFocus }) => {
 
     return (
         <main className="watchlist">
-            <h2>Watchlist Component</h2>
             {listMap}
         </main>
     )

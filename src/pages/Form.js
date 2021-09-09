@@ -54,7 +54,6 @@ const Form = ({focus, setFocus, createUpdate, history}) => {
     return (
         <div>
             <form onSubmit={fillForm}>
-                <h3>Form Component</h3>
                 <label>Title
                     <input type="text" name="title" value={focus.title} onChange={handleChange} />
                 </label>
