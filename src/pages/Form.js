@@ -16,12 +16,7 @@ const Form = ({focus, setFocus, createUpdate, history}) => {
         }
     }
 
-    const selectOption = (
-            <select onChange={handleSelect} >
-                <option value="">Which one?</option>
-                {dropdown.map((item, index) => (<option value={item.Title} >{item.Title} ({item.Year} {item.Type})</option>))}
-            </select>
-        )
+
 
     const handleSelect = async (event) => {
         console.log(event.target.value)
@@ -35,6 +30,13 @@ const Form = ({focus, setFocus, createUpdate, history}) => {
             genre: data.Genre
         })
     }
+
+    const selectOption = (
+        <select onChange={handleSelect} >
+            <option value="">Which one?</option>
+            {dropdown.map((item, index) => (<option value={item.Title} >{item.Title} ({item.Year} {item.Type})</option>))}
+        </select>
+    )
 
     const handleChange = (event) => {
         if (event.target.type === "checkbox") {
