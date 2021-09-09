@@ -12,11 +12,10 @@ const Form = ({focus, setFocus, createUpdate, history}) => {
         const response = await fetch(omdbUrl + "s=" + focus.title)
         const data = await response.json()
         if (data.Search) {
-            setDropdown([...data?.Search])
+            const sortedData = data.Search.sort((a, b) => a.Year < b.Year ? -1 : 1)
+            setDropdown([...sortedData])
         }
     }
-
-
 
     const handleSelect = async (event) => {
         console.log(event.target.value)
@@ -66,7 +65,7 @@ const Form = ({focus, setFocus, createUpdate, history}) => {
                 <label>Image URL
                     <input type="text" name="imgurl" value={focus.imgurl} onChange={handleChange} />
                 </label>
-                <img src={focus.imgurl} style={{"height": "100px"}} />
+                <img src={focus.imgurl}/>
                 <label>Genre
                     <input type="text" name="genre" value={focus.genre} onChange={handleChange} />
                 </label>

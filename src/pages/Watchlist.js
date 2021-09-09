@@ -12,13 +12,13 @@ const Watchlist = ({ watchlist, setFocus }) => {
         return (
             <Link key={index + item.title} to={`/${item.title}`} onClick={() => {setFocus(item)}}>
                 <h3>{item.title}</h3>
-                <img src={item.imgurl} style={{"height": "100px"}} />
+                <img src={item.imgurl}/>
             </Link>
         )
     })
 
     return (
-        <main>
+        <main className="watchlist">
             <h2>Watchlist Component</h2>
             {listMap}
         </main>

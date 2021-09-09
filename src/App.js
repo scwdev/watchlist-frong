@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
+import './App.sass';
 
 import Watchlist from './pages/Watchlist';
 import Focus from './pages/Focus';
